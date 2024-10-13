@@ -1,0 +1,22 @@
+# -*- coding: utf-8 -*-
+# from odoo import http
+
+
+# class MyKitchen(http.Controller):
+#     @http.route('/my_kitchen/my_kitchen', auth='public')
+#     def index(self, **kw):
+#         return "Hello, world"
+
+#     @http.route('/my_kitchen/my_kitchen/objects', auth='public')
+#     def list(self, **kw):
+#         return http.request.render('my_kitchen.listing', {
+#             'root': '/my_kitchen/my_kitchen',
+#             'objects': http.request.env['my_kitchen.my_kitchen'].search([]),
+#         })
+
+#     @http.route('/my_kitchen/my_kitchen/objects/<model("my_kitchen.my_kitchen"):obj>', auth='public')
+#     def object(self, obj, **kw):
+#         return http.request.render('my_kitchen.object', {
+#             'object': obj
+#         })
+
