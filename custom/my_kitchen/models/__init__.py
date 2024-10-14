@@ -1,4 +1,4 @@
 # -*- coding: utf-8 -*-
 
-from . import models
-from . import kitchen
+from . import models , kitchen , res_partner
+

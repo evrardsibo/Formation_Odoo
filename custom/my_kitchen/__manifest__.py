@@ -8,7 +8,7 @@
 Long description of module's purpose
     """,
 
-    'author': "Evrard Sibomana",
+    'author': "My Company",
     'website': "https://www.yourcompany.com",
 
     # Categories can be used to filter modules in modules listing
@@ -22,17 +22,18 @@ Long description of module's purpose
 
     # always loaded
     'data': [
-        # 'security/ir.model.access.csv',
-        'views/views.xml',
-        'views/templates.xml',
-        'views/kitchen_views.xml'
+        'security/ir.model.access.csv',
+        # 'views/views.xml',
+        # 'views/templates.xml',
+        'views/kitchen_views.xml',
+        'views/res_partner_views.xml',
     ],
-    'installable': True,
-    'application': True,
+
 
     # only loaded in demonstration mode
     'demo': [
         'demo/demo.xml',
     ],
+    'installable': True,
+    'application': True,
 }
-

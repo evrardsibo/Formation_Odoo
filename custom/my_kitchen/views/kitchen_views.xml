@@ -1,20 +1,46 @@
 <?xml version='1.0' encoding='utf-8'?>
 <odoo>
     <data>
-        <record id="kicten_views" model="ir.ui.view">
-            <field name="name">kitchen</field>
-            <field name="model">kitchen.kitchen</field>
+        <record id="kitchen_tree_view" model="ir.ui.view">
+            <field name="name">kitchen.tree</field>
+            <field name="model">kitchen</field>
             <field name="arch" type="xml">
-                <tree>
-
+                <tree string="kitchen">
+                    <field name="first_name"/>
+                    <field name="last_name"/>
+                    <field name="start_date"/>
+                    <field name="is_cooked"/>
+                    <field name="cook_number"/>
+                    <field name="email"/>
+                    <field name="age"/>
                 </tree>
             </field>
-
         </record>
-        <record id="kitchen_tree" model="ir.actions.act_window">
-
+        <record id="kitchen_form" model="ir.ui.view">
+            <field name="name">kitchen.form</field>
+            <field name="model">kitchen</field>
+            <field name="arch" type="xml">
+                <form string="Tag">
+                    <sheet>
+                        <group>
+                            <field name="first_name"/>
+                            <field name="last_name"/>
+                            <field name="start_date"/>
+                            <field name="is_cooked"/>
+                            <field name="cook_number"/>
+                            <field name="email"/>
+                            <field name="age"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
         </record>
-<!--        <menuitem id="menu_account_reconcile" name="Reconcile" parent="account.menu_finance_entries_actions"-->
-<!--                  action="action_move_line_posted_unreconciled" sequence="25" groups="account.group_account_user"/>-->
+        <record id="kitchen_win" model="ir.actions.act_window">
+            <field name="name">Kitchen</field>
+            <field name="res_model">kitchen</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+        <menuitem id="kitchen_root" name="kitchen" web_icon="my_kitchen,static/description/icon.png"
+                  groups="base.group_user" sequence="8" action="kitchen_win"/>
     </data>
 </odoo>
