@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <data>
+        <record id="kitchen_tree_recipe_view" model="ir.ui.view">
+            <field name="name">kitchen.tree</field>
+            <field name="model">kitchen.recipe</field>
+            <field name="arch" type="xml">
+                <tree string="kitchen_recipe">
+                    <field name="name"/>
+                    <field name="description"/>
+                    <field name="cooking_time"/>
+                    <field name="instructions"/>
+                    <field name="serving_size"/>
+                </tree>
+            </field>
+        </record>
+        <record id="kitchen_recipe_form" model="ir.ui.view">
+            <field name="name">kitchen.form</field>
+            <field name="model">kitchen.recipe</field>
+            <field name="arch" type="xml">
+                <form string="Tag">
+                    <sheet>
+                        <group>
+                            <field name="name"/>
+                            <field name="description"/>
+                            <field name="cooking_time"/>
+                            <field name="instructions"/>
+                            <field name="serving_size"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="kitchen_recipe_win" model="ir.actions.act_window">
+            <field name="name">Kitchen Recipe</field>
+            <field name="res_model">kitchen.recipe</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <menuitem id="kitchen_root_recipe" name="kitchen Recipe" sequence="2" parent="kitchen_root"
+                  action="kitchen_recipe_win"/>
+
+
+    </data>
+</odoo>

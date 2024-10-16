@@ -27,6 +27,7 @@ Long description of module's purpose
         # 'views/templates.xml',
         'views/kitchen_views.xml',
         'views/res_partner_views.xml',
+        'views/kitchen_recipe_views.xml',
     ],
 
 
