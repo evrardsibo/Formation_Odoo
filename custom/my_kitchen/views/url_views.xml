@@ -1,0 +1,10 @@
+<odoo>
+    <record model="ir.actions.act_url" id="action_url">
+        <field name="name">Open URL</field>
+        <field name="url">https://github.co</field>
+        <field name="target">new</field>
+
+    </record>
+
+    <menuitem name="Kitchen_URL" id="Kitchen_url" parent="kitchen_root" sequence="3" action="action_url"/>
+</odoo>

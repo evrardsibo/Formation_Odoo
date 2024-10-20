@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <data>
+        <record id="ingredient_tree" model="ir.ui.view">
+            <field name="name">ingredient.tree</field>
+            <field name="model">ingredient</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name"/>
+                    <field name="weight"/>
+                    <field name="description"/>
+                </tree>
+            </field>
+        </record>
+        <record id="ingridient_form" model="ir.ui.view">
+            <field name="name">Ingredient.form</field>
+            <field name="model">ingredient</field>
+            <field name="arch" type="xml">
+                <form string="Tag">
+
+                        <group>
+                            <field name="name"/>
+                            <field name="weight"/>
+                            <field name="description"/>
+
+                        </group>
+
+                </form>
+            </field>
+        </record>
+        <record id="ingredient_win" model="ir.actions.act_window">
+            <field name="name">Ingredient</field>
+            <field name="res_model">ingredient</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <menuitem id="ingredient_root" name="Ingredient" web_icon="ingredient,static/description/icon.png"
+                  groups="base.group_user" sequence="8" action="ingredient_win"/>
+    </data>
+</odoo>

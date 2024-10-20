@@ -1,4 +1,4 @@
-<?xml version='1.0' encoding='utf-8'?>
+<?xml version="1.0" encoding="UTF-8" ?>
 <odoo>
     <data>
         <record id="kitchen_tree_view" model="ir.ui.view">
@@ -10,12 +10,12 @@
                     <field name="last_name"/>
                     <field name="start_date"/>
                     <field name="is_cooked"/>
-                    <field name="cook_number"/>
                     <field name="description"/>
-                    <field name="waiter"/>
-                    <field name="total_employe"/>
+                    <field name="cook_number"/>
                     <field name="email"/>
                     <field name="age"/>
+                    <field name="waiter"/>
+                    <field name="total_employees"/>
                 </tree>
             </field>
         </record>
@@ -30,17 +30,18 @@
                             <field name="last_name"/>
                             <field name="start_date"/>
                             <field name="is_cooked"/>
-                            <field name="cook_number"/>
                             <field name="description"/>
-                            <field name="waiter"/>
-                            <field name="total_employe"/>
+                            <field name="cook_number"/>
                             <field name="email"/>
                             <field name="age"/>
+                            <field name="waiter"/>
+                            <field name="total_employees"/>
                         </group>
                     </sheet>
                 </form>
             </field>
         </record>
+
         <record id="kitchen_win" model="ir.actions.act_window">
             <field name="name">Kitchen</field>
             <field name="res_model">kitchen</field>
@@ -48,5 +49,7 @@
         </record>
         <menuitem id="kitchen_root" name="kitchen" web_icon="my_kitchen,static/description/icon.png"
                   groups="base.group_user" sequence="1" action="kitchen_win"/>
+
+
     </data>
 </odoo>

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record id="Competence_tree_view" model="ir.ui.view">   <!--id de la vue, créé par moi-->
+            <field name="name">Competence.view</field> <!--nom de la vue ? créé par moi-->
+            <field name="model">competence.tag</field> <!-- nom du model lié (doit encoder le titre correct)-->
+            <field name="arch" type="xml">   <!-- obligatoire -->
+                <tree string="Education">
+                    <field name="name"/>  <!-- champ a afficher dans la vue-->
+                    <field name="color" widget="color_picker"/>  <!-- champ a afficher dans la vue-->
+                </tree>
+            </field>
+        </record>
+
+        <record id="Competence_form" model="ir.ui.view">
+            <field name="name">Competence.form</field>
+            <field name="model">competence.tag</field>
+            <field name="arch" type="xml">
+                <form string="Tag">
+                    <sheet>
+                        <group>
+                            <field name="name"/>  <!-- champ a afficher dans la vue-->
+                            <field name="color" widget="color_picker"/>  <!-- champ a afficher dans la vue-->
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="competence_order_color">
+            <field name="name">Competence</field>
+            <field name="res_model">competence.tag</field> <!-- nom important -->
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <menuitem id="competence_root" name="Education" parent="education_root"
+                  groups="base.group_user" sequence="2" action="competence_order_color"/>
+
+    </data>
+</odoo>

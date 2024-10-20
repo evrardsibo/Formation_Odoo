@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record id="Education_tree_view" model="ir.ui.view">   <!--id de la vue, créé par moi-->
+            <field name="name">Education.view</field> <!--nom de la vue ? créé par moi-->
+            <field name="model">education</field> <!-- nom du model lié (doit encoder le titre correct)-->
+            <field name="arch" type="xml">   <!-- obligatoire -->
+                <tree string="Education">
+                    <field name="contact"/>  <!-- champ a afficher dans la vue-->
+                    <field name="type"/>  <!-- champ a afficher dans la vue-->
+                    <field name="name"/>
+                    <field name="competences" widget="many2many_tags" options="{'color_field': 'color'}"/>
+               </tree>
+            </field>
+        </record>
+
+        <record id="Education_form" model="ir.ui.view">
+            <field name="name">Education.form</field>
+            <field name="model">education</field>
+            <field name="arch" type="xml">
+                <form string="Tag">
+                    <sheet>
+                        <group>
+                            <field name="contact"/>  <!-- champ a afficher dans la vue-->
+                            <field name="type"/>  <!-- champ a afficher dans la vue-->
+                            <field name="name"/>
+                            <field name="competences" widget="many2many_tags" options="{'color_field': 'color'}"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        <record model="ir.actions.act_window" id="education_order">
+            <field name="name">MEducation</field>
+            <field name="res_model">education</field> <!-- nom important -->
+            <field name="view_mode">tree,form</field>
+        </record>
+        <menuitem id="education_root" name="Education" web_icon="education,static/description/icon.png"
+                  groups="base.group_user" sequence="1" action="education_order"/>
+        <!-- parent = id du menu parent "principal" , !!!! ne pas mettre de '.' dans l'id du menu item-->
+
+    </data>
+</odoo>

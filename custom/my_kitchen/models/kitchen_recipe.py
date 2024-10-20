@@ -1,23 +1,12 @@
-from odoo import models, fields, api
-
-
+from odoo import models, fields
 
 class KitchenRecipe(models.Model):
-    _name = "kitchen.recipe"
-    _description = "Kitchen Recipe"
+    _name = 'kitchen.recipe' #### nom hyper important, sera appelé par le views et le csv
+    _description = 'Ceci est un modèle de recette de cuisine'
 
-    name = fields.Char(string="Name", required=True)
-    description = fields.Text("Description")
-    instructions = fields.Text("Instructions")
-    cooking_time = fields.Integer(string="Cooking Time")
-    serving_size = fields.Integer(string="Serving Size")
-
-    @api.onchange('cooking_time')
-    def _onchange_cooking_time(self):
-        for rec in self:
-            if rec.cooking_time <= 10:
-                rec.description = "The kitchen is well equipped for 10 minutes"
-            elif rec.cooking_time <= 20:
-                rec.description = "The kitchen is well equipped for 20 minutes"
-            else:
-                rec.description = "The kitchen is equipped for more than 20 minutes"
+    name = fields.Char(string='Nom de la Recette')
+    description = fields.Text('Description')
+    cooking_time= fields.Integer(string = 'Temps de Cuisson')
+    instructions = fields.Text('Instructions')
+    serving_size = fields.Integer(string='Nombre de Portions')
+    image = fields.Image(string='Image')

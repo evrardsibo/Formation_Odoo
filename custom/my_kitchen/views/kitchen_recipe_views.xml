@@ -1,6 +1,19 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <odoo>
     <data>
+
+        <record id="kitchen_recipe_search_view" model="ir.ui.view">
+            <field name="name">kitchen.search</field>
+            <field name="model">kitchen.recipe</field>
+            <field name="arch" type="xml">
+                <search>
+                    <field name="name"/>
+                    <field name="cooking_time"/>
+                    <filter name="cooking" string="cooking time more than 10" domain="[('cooking_time', '=', 10)]"/>
+                </search>
+            </field>
+        </record>
+
         <record id="kitchen_tree_recipe_view" model="ir.ui.view">
             <field name="name">kitchen.tree</field>
             <field name="model">kitchen.recipe</field>
@@ -9,24 +22,37 @@
                     <field name="name"/>
                     <field name="description"/>
                     <field name="cooking_time"/>
-                    <field name="instructions"/>
+                    <field name="instructions" invisible="1"/>
                     <field name="serving_size"/>
                 </tree>
             </field>
         </record>
+
         <record id="kitchen_recipe_form" model="ir.ui.view">
             <field name="name">kitchen.form</field>
             <field name="model">kitchen.recipe</field>
             <field name="arch" type="xml">
                 <form string="Tag">
                     <sheet>
+                        <h2>Fiche de recette :</h2>
                         <group>
-                            <field name="name"/>
-                            <field name="description"/>
-                            <field name="cooking_time"/>
-                            <field name="instructions"/>
-                            <field name="serving_size"/>
+                            <group>
+                                <field name="name" required="1"/>
+                                <field name="description"/>
+                                <field name="cooking_time"/>
+                                <field name="instructions"/>
+                            </group>
+                            <group>
+                                <field name="image" widget="image" style="width: 75px; height: 75px;"/>/>
+                            </group>
                         </group>
+                        <notebook>
+                            <page string="Autres Information">
+                                <group>
+                                    <field name="serving_size"/>
+                                </group>
+                            </page>
+                        </notebook>
                     </sheet>
                 </form>
             </field>
