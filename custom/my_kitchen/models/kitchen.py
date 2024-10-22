@@ -17,6 +17,27 @@ class Kitchen(models.Model):
     phone = fields.Integer(string="Phone")
     total_employees = fields.Integer(string="total_employees", compute="_compute_total_employee", store=True)
 
+    def add_cook_number(self):
+        for record in self:
+            record.cook_number += 1
+            self.update_description()
+            self.update_waiter()
+
+    def update_waiter(self):
+        for record in self:
+            record.waiter += 5
+
+    def update_description(self):
+        for record in self:
+            if record.cook_number <= 5:
+                record.description = "Moins de 5 personnes"
+            elif record.cook_number <= 10:
+                record.description = "Moins de 10 personnes"
+            elif record.cook_number <= 15:
+                record.description = "Moins de 15 personnes"
+            else:
+                record.description = "Plus de 15 personnes"
+
     @api.depends('cook_number', 'waiter')
     def _compute_total_employee(self):
         for record in self:
@@ -33,6 +54,3 @@ class Kitchen(models.Model):
                 record.description = "Moins de 15 personnes"
             else:
                 record.description = "Plus de 15 personnes"
-
-
-

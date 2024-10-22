@@ -25,6 +25,9 @@
             <field name="model">kitchen</field>
             <field name="arch" type="xml">
                 <form string="Tag">
+                    <header>
+                        <button name="add_cook_number" string="Add cook number" type="object" class="oe_highlight"/>
+                    </header>
                     <sheet>
                         <group>
                             <field name="first_name"/>
