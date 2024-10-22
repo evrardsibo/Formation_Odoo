@@ -1,5 +1,6 @@
 from odoo import models, fields
 
+
 class KitchenRecipe(models.Model):
     _name = 'kitchen.recipe' #### nom hyper important, sera appelé par le views et le csv
     _description = 'Ceci est un modèle de recette de cuisine'
@@ -10,3 +11,4 @@ class KitchenRecipe(models.Model):
     instructions = fields.Text('Instructions')
     serving_size = fields.Integer(string='Nombre de Portions')
     image = fields.Image(string='Image')
+    line_ids = fields.One2many("recipe.line","recipe_id",string="Line Id")

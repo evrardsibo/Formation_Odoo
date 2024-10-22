@@ -14,6 +14,7 @@ class Kitchen(models.Model):
     start_date = fields.Datetime(string="Start Date")
     email = fields.Char(string="Email")
     waiter = fields.Integer(help="waiter")
+    phone = fields.Integer(string="Phone")
     total_employees = fields.Integer(string="total_employees", compute="_compute_total_employee", store=True)
 
     @api.depends('cook_number', 'waiter')

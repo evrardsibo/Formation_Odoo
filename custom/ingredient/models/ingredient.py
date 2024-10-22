@@ -8,3 +8,6 @@ class Ingredient(models.Model):
     name = fields.Char('name', required=True)
     weight = fields.Float('weight', required=True)
     description = fields.Text('description', required=True)
+    quantity_max = fields.Float(string="Quantity Max")
+
+

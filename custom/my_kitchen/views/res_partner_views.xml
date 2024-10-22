@@ -8,9 +8,22 @@
             <field name="arch" type="xml">
                 <xpath expr="//field[@name='city']" position="after">
                     <field name="is_cook"/>
+
+                </xpath>
+            </field>
+
+        </record>
+
+        <record id="view_partner_form" model="ir.ui.view">
+            <field name="name">res.partner.form</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="base.view_partner_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='title']" position="after">
+                    <field name="type_ids" widget="many2many_tags" options="{'color_field': 'color'}"
+                           domain="[('is_confirmed', '=', 1)]"/>
                 </xpath>
             </field>
         </record>
-
     </data>
 </odoo>

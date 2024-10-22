@@ -12,8 +12,9 @@
                     <field name="is_cooked"/>
                     <field name="description"/>
                     <field name="cook_number"/>
-                    <field name="email"/>
+                    <field name="email" widget="email"/>
                     <field name="age"/>
+                    <field name="phone" widget="phone"/>
                     <field name="waiter"/>
                     <field name="total_employees"/>
                 </tree>
@@ -34,6 +35,7 @@
                             <field name="cook_number"/>
                             <field name="email"/>
                             <field name="age"/>
+                            <field name="phone" widget="phone" />
                             <field name="waiter"/>
                             <field name="total_employees"/>
                         </group>

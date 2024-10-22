@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <record id="kitchen_tree_view" model="ir.ui.view">
+            <field name="name">res.partner.type.tree</field>
+            <field name="model">res.partner.type</field>
+            <field name="arch" type="xml">
+                <tree string="Type Contact" editable="bottom">
+                    <field name="sequence" widget="handle"/>
+                    <field name="name"/>
+                    <field name="color" widget="color_picker"/>
+                    <field name="is_confirmed"/>
+                </tree>
+            </field>
+        </record>
+        <record id="respartnertyp" model="ir.actions.act_window">
+            <field name="name">Type</field>
+            <field name="res_model">res.partner.type</field>
+            <field name="view_mode">tree</field>
+        </record>
+        <menuitem id="respartnertypeid" name="Contact Type" parent="contacts.res_partner_menu_config"
+                  groups="base.group_user" sequence="3" action="respartnertyp"/>
+
+    </data>
+</odoo>

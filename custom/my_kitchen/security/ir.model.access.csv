@@ -3,3 +3,5 @@ access_my_kitchen_my_kitchen_readonly,my_kitchen.my_kitchen,model_kitchen,base.g
 access_my_kitchen_my_kitchen_manager,my_kitchen.my_kitchen,model_kitchen,base.group_system,1,1,1,1
 access_my_kitchen_my_order,my_kitchen.my_kitchen_order,model_kitchen_order,base.group_user,1,1,1,1
 access_my_kitchen_my_recipe,my_kitchen.my_kitchen_recipe,model_kitchen_recipe,base.group_user,1,1,1,1
+access_my_kitchen_my_type,my_kitchen.my_kitchen_recipe,model_res_partner_type,base.group_user,1,1,1,1
+access_my_kitchen_line,my_kitchen.my_kitchen_recipe,model_recipe_line,base.group_user,1,1,1,1
