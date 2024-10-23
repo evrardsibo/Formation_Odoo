@@ -70,6 +70,7 @@
             <field name="name">Kitchen Recipe</field>
             <field name="res_model">kitchen.recipe</field>
             <field name="view_mode">tree,form</field>
+            <field name="context">{'default_description':'EVR'}</field>
         </record>
 
         <menuitem id="kitchen_root_recipe" name="kitchen Recipe" sequence="2" parent="kitchen_root"

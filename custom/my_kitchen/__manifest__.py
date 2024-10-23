@@ -31,6 +31,7 @@ Long description of module's purpose
         'views/kitchen_order_views.xml',
         'views/url_views.xml',
         'views/res_partner_type_views.xml',
+        'wizard/wizard_kitchen_views.xml',
     ],
     # only loaded in demonstration mode
     'demo': [

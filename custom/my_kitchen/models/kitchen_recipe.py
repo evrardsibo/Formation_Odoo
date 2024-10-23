@@ -6,7 +6,7 @@ class KitchenRecipe(models.Model):
     _description = 'Ceci est un modèle de recette de cuisine'
 
     name = fields.Char(string='Nom de la Recette')
-    description = fields.Text('Description')
+    description = fields.Text(string='Description')
     cooking_time= fields.Integer(string = 'Temps de Cuisson')
     instructions = fields.Text('Instructions')
     serving_size = fields.Integer(string='Nombre de Portions')

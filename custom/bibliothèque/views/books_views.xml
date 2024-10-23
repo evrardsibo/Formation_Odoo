@@ -11,7 +11,7 @@
                     <field name="title"/>
                     <field name="author"/>
                     <field name="year_of_manufacture"/>
-                    <field name="copy_number"/>
+                    <field name="gender" widget="many2many_tags" options="{'color_field': 'color'}"/>
                 </tree>
             </field>
         </record>
@@ -27,8 +27,8 @@
                             <group>
                                 <field name="title"/>
                                 <field name="author"/>
-                                <field name="year_of_manufacture"/>
-                                <field name="gender"/>
+                                <field name="year_of_manufacture" widget="date" options="{'format': 'dd/MM/yyyy'}"/>
+                                <field name="gender" widget="many2many_tags" options="{'color_field': 'color'}"/>
                             </group>
                             <group>
                                 <field name="image" widget="image" style="width: 75px; height: 75px;"/>
@@ -46,9 +46,6 @@
             <field name="model">books</field>
             <field name="arch" type="xml">
                 <kanban class="o_kanban_mobile" sample="1">
-                    <field name="title"/>
-                    <field name="author"/>
-                    <field name="image"/>
                     <templates>
                         <t t-name="kanban-box">
                             <div t-attf-class="oe_kanban_global_click">

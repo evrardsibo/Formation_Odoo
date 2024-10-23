@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <odoo>
     <data>
-        <record id="kitchen_tree_view" model="ir.ui.view">
+        <record id="kitchen_tree_views" model="ir.ui.view">
             <field name="name">kitchen.tree</field>
             <field name="model">kitchen</field>
             <field name="arch" type="xml">
@@ -10,13 +10,6 @@
                     <field name="last_name"/>
                     <field name="start_date"/>
                     <field name="is_cooked"/>
-                    <field name="description"/>
-                    <field name="cook_number"/>
-                    <field name="email" widget="email"/>
-                    <field name="age"/>
-                    <field name="phone" widget="phone"/>
-                    <field name="waiter"/>
-                    <field name="total_employees"/>
                 </tree>
             </field>
         </record>
@@ -27,6 +20,8 @@
                 <form string="Tag">
                     <header>
                         <button name="add_cook_number" string="Add cook number" type="object" class="oe_highlight"/>
+                        <button name="action_open_wizard" string="Wizard Kitchen" type="object"
+                                class="btn btn-success"/>
                     </header>
                     <sheet>
                         <group>
@@ -38,9 +33,11 @@
                             <field name="cook_number"/>
                             <field name="email"/>
                             <field name="age"/>
-                            <field name="phone" widget="phone" />
+                            <field name="phone" widget="phone"/>
                             <field name="waiter"/>
                             <field name="total_employees"/>
+                            <field name="owner_id"/>
+                            <field name="message"/>
                         </group>
                     </sheet>
                 </form>

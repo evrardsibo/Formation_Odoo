@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record id="genre_tree_view" model="ir.ui.view">   <!--id de la vue, créé par moi-->
+            <field name="name">genre.view</field> <!--nom de la vue ? créé par moi-->
+            <field name="model">genre.tag</field> <!-- nom du model lié (doit encoder le titre correct)-->
+            <field name="arch" type="xml">   <!-- obligatoire -->
+                <tree string="Genre">
+                    <field name="name"/>  <!-- champ a afficher dans la vue-->
+                    <field name="color" widget="color_picker"/>  <!-- champ a afficher dans la vue-->
+                </tree>
+            </field>
+        </record>
+
+        <record id="Genre_form" model="ir.ui.view">
+            <field name="name">Genre.form</field>
+            <field name="model">genre.tag</field>
+            <field name="arch" type="xml">
+                <form string="Tag">
+                    <sheet>
+                        <group>
+                            <field name="name"/>  <!-- champ a afficher dans la vue-->
+                            <field name="color" widget="color_picker"/>  <!-- champ a afficher dans la vue-->
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="genre_order_color">
+            <field name="name">Genre</field>
+            <field name="res_model">genre.tag</field> <!-- nom important -->
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <menuitem id="genre_tags" name="Genre" parent="books_root"
+                  groups="base.group_user" sequence="3" action="genre_order_color"/>
+
+    </data>
+</odoo>
