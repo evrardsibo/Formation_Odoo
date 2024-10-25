@@ -76,7 +76,7 @@
         <field name="model">library.loan</field>
         <field name="arch" type="xml">
             <gantt date_start="loan_date" date_stop="return_date" color="id"
-                   default_group_by="member_id" string="Member" decoration-danger = "state=='late'" decoration-warning = "state=='ongoing'" decoration-success = "state=='returned'">
+                   default_group_by="book_id" string="Books" decoration-danger = "state=='late'" decoration-warning = "state=='ongoing'" decoration-success = "state=='returned'">
                 <field name="member_id"/>
                 <field name="loan_date"/>
                 <field name="return_date"/>
