@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <data>
+        <record id="data_1" model="ingredient">
+            <field name="name">Poulet roti</field>
+            <field name="weight">15.25</field>
+            <field name="description">Bon</field>
+            <field name="quantity_max">25</field>
+        </record>
+
+        <record id="data_2" model="ingredient">
+            <field name="name">Poulet curu</field>
+            <field name="weight">16.32</field>
+            <field name="description">Tres Bon</field>
+            <field name="quantity_max">20</field>
+        </record>
+
+        <record id="data_3" model="ingredient">
+            <field name="name">Poulet pane</field>
+            <field name="weight">17.42</field>
+            <field name="description">Super</field>
+            <field name="quantity_max">26</field>
+        </record>
+    </data>
+</odoo>

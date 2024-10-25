@@ -1,0 +1,1 @@
+from . import wizard_book, wizard_book1

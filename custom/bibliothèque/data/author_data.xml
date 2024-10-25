@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <data>
+        <record id="data_12" model="author">
+            <field name="name">Clara Dupont</field>
+        </record>
+
+        <record id="data_23" model="author">
+            <field name="name">L'Ombre du Passé</field>
+
+        </record>
+
+        <record id="data_34" model="author">
+            <field name="name">Sophie Martin</field>
+        </record>
+
+        <record id="data_45" model="author">
+            <field name="name">Antoine Girard</field>
+        </record>
+
+        <record id="data_56" model="author">
+            <field name="name">Émilie Roche</field>
+        </record>
+    </data>
+</odoo>

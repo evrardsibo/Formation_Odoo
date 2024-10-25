@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <data>
+        <record id="data_10" model="genre.tag">
+            <field name="name">Roman policier</field>
+        </record>
+
+        <record id="data_29" model="genre.tag">
+            <field name="name">Thriller</field>
+
+        </record>
+
+        <record id="data_38" model="genre.tag">
+            <field name="name">Roman d'aventures</field>
+        </record>
+
+        <record id="data_47" model="genre.tag">
+            <field name="name">Roman historique</field>
+        </record>
+
+        <record id="data_57" model="genre.tag">
+            <field name="name">Tragi drame</field>
+        </record>
+    </data>
+</odoo>

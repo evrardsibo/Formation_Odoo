@@ -33,8 +33,17 @@
                             <group>
                                 <field name="image" widget="image" class="oe_avatar"/>
                                 <field name="date_start"/>
+                                <field name="end_date"/>
                             </group>
                         </group>
+                        <notebook>
+                            <page string="Autres Information">
+                                <group>
+                                    <field name="loan_ids">
+                                    </field>
+                                </group>
+                            </page>
+                        </notebook>
                     </sheet>
                 </form>
             </field>
@@ -72,10 +81,24 @@
             </field>
         </record>
 
+        <record id="member_view_gantt" model="ir.ui.view">
+            <field name="name">member.view.gantt</field>
+            <field name="model">member</field>
+            <field name="arch" type="xml">
+                <gantt date_start="date_start" date_stop="end_date" color="id"
+                       default_group_by="name_id" string="Member">
+                    <field name="image" widget="image" style="width: 75px; height: 75px;"/>
+                    <field name="name_id"/>
+                    <field name="date_start"/>
+                    <field name="end_date"/>
+                </gantt>
+            </field>
+        </record>
+
         <record id="member_win" model="ir.actions.act_window">
             <field name="name">Member</field>
             <field name="res_model">member</field>
-            <field name="view_mode">kanban,tree,form</field>
+            <field name="view_mode">kanban,tree,form,gantt</field>
         </record>
 
         <menuitem id="member_act" name="Members" parent="books_root"

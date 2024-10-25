@@ -7,17 +7,19 @@ from datetime import date
 class Kitchen(models.Model):
     _name = 'kitchen'
     _description = 'kitchen'
+    _rec_name = "first_name"
+
+    first_name = fields.Char(string="first_name")
+    last_name = fields.Char(string="last_name")
+    description = fields.Text('Description')
+    is_cooked = fields.Boolean(string="Cooked", default=True)
+    age = fields.Integer(help="age")
+    cook_number = fields.Integer(help="age")
 
     @api.model
     def get_default_date(self):
         return date.today()
 
-    first_name = fields.Char(string="first_name", required=True)
-    last_name = fields.Char(string="last_name", required=True)
-    description = fields.Text('Description')
-    is_cooked = fields.Boolean(string="Cooked", default=True)
-    age = fields.Integer(help="age")
-    cook_number = fields.Integer(help="age")
     start_date = fields.Date(string="Start Date", default=get_default_date)
     email = fields.Char(string="Email")
     waiter = fields.Integer(help="waiter")
@@ -33,15 +35,18 @@ class Kitchen(models.Model):
         )
     ]
 
+
     def add_cook_number(self):
         for record in self:
             record.cook_number += 1
-            # self.update_description()
-            # self.update_waiter()
+            self.update_description()
+            self.update_waiter()
+
 
     def update_waiter(self):
         for record in self:
             record.waiter += 5
+
 
     def update_description(self):
         for record in self:
@@ -53,6 +58,7 @@ class Kitchen(models.Model):
                 record.description = "Moins de 15 personnes"
             else:
                 record.description = "Plus de 15 personnes"
+
 
     @api.depends('cook_number', 'waiter')
     def _compute_total_employee(self):
@@ -67,6 +73,7 @@ class Kitchen(models.Model):
             else:
                 record.message = "Who are you ?"
 
+
     @api.onchange('cook_number')
     def _onchange_is_cooked(self):
         for record in self:
@@ -79,11 +86,13 @@ class Kitchen(models.Model):
             else:
                 record.description = "Plus de 15 personnes"
 
+
     @api.constrains('cook_number')
     def _check_cook_number(self):
         for record in self:
             if record.cook_number < 0:
                 raise ValidationError("The cook_number cannot be negatif")
+
 
     def action_open_wizard(self):
         return {

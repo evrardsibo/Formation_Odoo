@@ -24,6 +24,8 @@
                     <field name="cooking_time"/>
                     <field name="instructions" invisible="1"/>
                     <field name="serving_size"/>
+                    <button name="action_open_wizard_recipe" string="Dupliquer" type="object" class="btn btn-success"/>
+                    <button type="action" name="%(action_report_recipe_template)d" string="Rapport" class="btn btn-primary"/>
                 </tree>
             </field>
         </record>
@@ -37,7 +39,7 @@
                         <h2>Fiche de recette :</h2>
                         <group>
                             <group>
-                                <field name="name" />
+                                <field name="name"/>
                                 <field name="description"/>
                                 <field name="cooking_time"/>
                                 <field name="instructions"/>
@@ -73,7 +75,9 @@
             <field name="context">{'default_description':'EVR'}</field>
         </record>
 
-        <menuitem id="kitchen_root_recipe" name="kitchen Recipe" sequence="2" parent="kitchen_root"
+        <menuitem id="recipe_report_rep" name="Kitchen Recipe" parent='kitchen_root'
+                  groups="base.group_user" sequence="8"/>
+        <menuitem id="kitchen_root_recipe" name="kitchen Recipe" sequence="2" parent="recipe_report_rep"
                   action="kitchen_recipe_win"/>
 
 

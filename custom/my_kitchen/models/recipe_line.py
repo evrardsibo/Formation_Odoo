@@ -9,7 +9,7 @@ class RecipeLine(models.Model):
     ingredient_id = fields.Many2one("ingredient", string="Ingredient")
     quantity = fields.Float(string='Quantity')
     recipe_id = fields.Many2one('kitchen.recipe', string="Recipe Id")
-    can_by_pass = fields.Boolean(string='Can By Pass', default=False)
+    can_by_pass = fields.Boolean(string='Can By Pass')
 
     @api.onchange('quantity')
     def _onchange_max_quantity(self):

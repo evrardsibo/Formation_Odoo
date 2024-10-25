@@ -1,0 +1,96 @@
+<odoo>
+    <record id="view_library_loan_form" model="ir.ui.view">
+        <field name="name">library.loan.form</field>
+        <field name="model">library.loan</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="member_id"/>
+                            <field name="book_id"/>
+                            <field name="loan_date"/>
+                            <field name="return_date"/>
+                            <field name="state"/>
+                        </group>
+                        <group>
+                            <field name="image" widget="image" style="width: 75px; height: 75px;"/>
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="view_library_loan_tree" model="ir.ui.view">
+        <field name="name">library.loan.tree</field>
+        <field name="model">library.loan</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="member_id"/>
+                <field name="book_id"/>
+                <field name="loan_date"/>
+                <field name="return_date"/>
+                <field name="state"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="loan_view_kanban" model="ir.ui.view">
+        <field name="name">loan.view.kanban</field>
+        <field name="model">library.loan</field>
+        <field name="arch" type="xml">
+            <kanban class="o_kanban_mobile" sample="1">
+                <templates>
+                    <t t-name="kanban-box">
+                        <div t-attf-class="oe_kanban_global_click">
+                            <div class="row">
+                                <div class="col-12">
+                                    <strong>
+                                        <field name="member_id"/>
+                                    </strong>
+                                </div>
+                            </div>
+                            <t t-if="record.book_id.value">
+                                <hr class="mt8 mb8"/>
+                                <field name="book_id"/>
+                            </t>
+                            <div>
+                                <field name="image" widget="image" style="width: 75px; height: 75px;"/>
+                            </div>
+                            <t>
+                                <field name="state"/>
+                            </t>
+                            <t>
+                                <field name="return_date"/>
+                            </t>
+                        </div>
+                    </t>
+                </templates>
+            </kanban>
+        </field>
+    </record>
+
+    <record id="loan_view_gantt" model="ir.ui.view">
+        <field name="name">loan.view.gantt</field>
+        <field name="model">library.loan</field>
+        <field name="arch" type="xml">
+            <gantt date_start="loan_date" date_stop="return_date" color="id"
+                   default_group_by="member_id" string="Member" decoration-danger = "state=='late'" decoration-warning = "state=='ongoing'" decoration-success = "state=='returned'">
+                <field name="member_id"/>
+                <field name="loan_date"/>
+                <field name="return_date"/>
+                <field name="state"/>
+            </gantt>
+        </field>
+    </record>
+
+    <record model="ir.actions.act_window" id="loans_action">
+        <field name="name">Loan</field>
+        <field name="res_model">library.loan</field> <!-- nom important -->
+        <field name="view_mode">gantt,kanban,tree,form</field>
+    </record>
+
+    <menuitem id="loans_books" name="Loans" parent="books_root"
+              groups="base.group_user" sequence="5" action="loans_action"/>
+</odoo>

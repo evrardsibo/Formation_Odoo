@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <data>
+        <record id="wizard_book_form" model="ir.ui.view">
+            <field name="name">Book.form</field>
+            <field name="model">book.wizard</field>
+            <field name="arch" type="xml">
+                <form string="Tag">
+                    <group>
+                        <field name="title"/>
+                        <field name="isbn"/>
+                    </group>
+                    <footer>
+                        <button name="action_open_wizard_book1" string="Next" type="object" class="btn btn-success"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+    </data>
+</odoo>

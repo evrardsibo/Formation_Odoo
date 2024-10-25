@@ -21,6 +21,9 @@
             <field name="model">books</field>
             <field name="arch" type="xml">
                 <form string="Tag">
+                    <header>
+                        <button name="action_open_wizard_book" string="Create" type="object" class="btn btn-success"/>
+                    </header>
                     <sheet>
                         <h2>Library Management :</h2>
                         <group>
@@ -36,6 +39,14 @@
                                 <field name="copy_number"/>
                             </group>
                         </group>
+                        <notebook>
+                            <page string="Autres Information">
+                                <group>
+                                    <field name="rent_ids">
+                                    </field>
+                                </group>
+                            </page>
+                        </notebook>
                     </sheet>
                 </form>
             </field>
@@ -66,6 +77,9 @@
                                 <t>
                                     <field name="year_of_manufacture"/>
                                 </t>
+                                <t>
+                                    <field name="gender" widget="many2many_tags" options="{'color_field': 'color'}"/>
+                                </t>
                             </div>
                         </t>
                     </templates>
@@ -80,6 +94,8 @@
         </record>
 
         <menuitem id="books_root" name="Books" web_icon="bibliothèque,static/description/icon.png"
+                  groups="base.group_user" sequence="1" action="books_win"/>
+        <menuitem id="books_test" name="Books" parent='books_root'
                   groups="base.group_user" sequence="1" action="books_win"/>
     </data>
 </odoo>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <data>
+
+        <record id="Author_view" model="ir.ui.view">
+            <field name="name">Author.tree</field>
+            <field name="model">author</field>
+            <field name="arch" type="xml">
+                <tree string="author" editable="bottom">
+                    <field name="sequence" widget='handle'/>
+                    <field name="name"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="author_win" model="ir.actions.act_window">
+            <field name="name">Author</field>
+            <field name="res_model">author</field>
+            <field name="view_mode">tree</field>
+        </record>
+
+        <menuitem id="author" name="Author" sequence="4" parent="books_root"
+                  action="author_win"/>
+
+
+    </data>
+</odoo>

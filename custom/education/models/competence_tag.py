@@ -1,5 +1,3 @@
-from dataclasses import fields
-
 from odoo import models , fields
 
 

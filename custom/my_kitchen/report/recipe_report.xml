@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <data>
+        <template id="report_recipe">
+            <t t-call="web.html_container">
+                <h2>Recipe Report</h2>
+                <t t-foreach="docs" t-as="doc">
+                    <p>Name:
+                        <t t-esc="doc['name']"/>
+                    </p>
+                    <p>Description:
+                        <t t-esc="doc['description']"/>
+                    </p>
+                    <p>Cooking time:
+                        <t t-esc="doc['cooking_time']"/>
+                    </p>
+
+                    <div t-if="doc.image">
+                        <img t-attf-src="data:image/png;base64,{{doc.image}}" style="max-height:35px;max-width:45%"/>
+                    </div>
+                    <p>--------------------------------</p>
+                </t>
+
+            </t>
+        </template>
+    </data>
+</odoo>
+
+
+

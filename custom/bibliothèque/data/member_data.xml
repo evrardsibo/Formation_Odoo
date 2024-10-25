@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <data>
+<!--        <record id="data_100" model="member">-->
+<!--            <field name="date_start">02/17/20216</field>-->
+<!--        </record>-->
+
+<!--        <record id="data_290" model="member">-->
+<!--            <field name="date_start">08/24/2020</field>-->
+
+<!--        </record>-->
+
+<!--        <record id="data_380" model="member">-->
+<!--            <field name="date_start">09/23/1987</field>-->
+<!--        </record>-->
+
+<!--        <record id="data_470" model="member">-->
+<!--            <field name="date_start">10/10/1982</field>-->
+<!--        </record>-->
+
+<!--        <record id="data_570" model="member">-->
+<!--            <field name="date_start">04/04/2018</field>-->
+<!--        </record>-->
+    </data>
+</odoo>

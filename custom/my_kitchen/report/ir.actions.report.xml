@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <data>
+        <record id="action_report_recipe_template" model="ir.actions.report">
+            <field name="name">Recipe Report</field>
+            <field name="model">kitchen.recipe</field>
+            <field name="report_type">qweb-pdf</field>
+            <field name="report_name">my_kitchen.report_recipe</field>
+            <field name="report_file">my_kitchen.report_recipe</field>
+            <field name="binding_model_id" ref="model_kitchen_recipe"/>
+            <field name="binding_type">report</field>
+        </record>
+
+        <menuitem id="recipe_report" name="Report" parent='recipe_report_rep'
+                  groups="base.group_user" sequence="8" action="action_report_recipe_template"/>
+    </data>
+</odoo>

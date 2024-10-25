@@ -28,6 +28,16 @@ Long description of module's purpose
         'views/books_views.xml',
         'views/member_views.xml',
         'views/genre_tag_views.xml',
+        'views/author_views.xml',
+        'views/library_loan_views.xml',
+        'wizard/wizard_book.xml',
+        'wizard/wizard_book1.xml',
+         'data/book_data.xml',
+        'data/gender_data.xml',
+         'data/author_data.xml',
+        'data/member_data.xml',
+
+
     ],
     # only loaded in demonstration mode
     'demo': [

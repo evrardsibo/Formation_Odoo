@@ -9,3 +9,5 @@ class Education(models.Model):
     type = fields.Selection(selection=[('educateur de rue','Educateur de Rue'),('educateur de quartier','Educateur de Quartier')],string='Type',default='educateur de rue')
     name = fields.Char(string="nick_name", required=True)
     competences = fields.Many2many('competence.tag',string='Competences')
+
+

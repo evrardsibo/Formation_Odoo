@@ -32,6 +32,9 @@ Long description of module's purpose
         'views/url_views.xml',
         'views/res_partner_type_views.xml',
         'wizard/wizard_kitchen_views.xml',
+        'wizard/wizard_recipe_views.xml',
+        'report/recipe_report.xml',
+        'report/ir.actions.report.xml',
     ],
     # only loaded in demonstration mode
     'demo': [
@@ -40,6 +43,4 @@ Long description of module's purpose
     'installable': True,
     'application': True,
 
-
 }
-

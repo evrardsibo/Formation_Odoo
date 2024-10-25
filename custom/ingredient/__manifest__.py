@@ -26,6 +26,7 @@ My Ingredient
         # 'views/views.xml',
         # 'views/templates.xml',
         'views/ingredient_views.xml',
+        'data/ingredient.xml',
     ],
     # only loaded in demonstration mode
     'demo': [
