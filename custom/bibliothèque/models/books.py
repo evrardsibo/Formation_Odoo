@@ -11,7 +11,7 @@ class Books(models.Model):
     gender = fields.Many2many('genre.tag', string='Gender')
     year_of_manufacture = fields.Date(string="Year of manufacture")
     isbn = fields.Char(string="ISBN")
-    copy_number = fields.Integer(string="Copy number")
+    copy_number = fields.Integer(string="Copy number",default=1)
     image = fields.Image(string='Image')
     sequence = fields.Integer(string="sequence")
     rent_ids = fields.One2many('library.loan','book_id',String='Rent')

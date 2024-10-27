@@ -15,3 +15,4 @@ class Member(models.Model):
     image = fields.Image(related='name_id.image_1920', string="Image")
     end_date = fields.Date(string='End Date')
     loan_ids = fields.One2many('library.loan','member_id',string='Loans')
+
