@@ -34,17 +34,16 @@ class LibraryLoan(models.Model):
     #         if loan_time < datetime.strptime('09:00', '%H:%M').time() or loan_time > datetime.strptime('17:30', '%H:%M').time():
     #             raise exceptions.ValidationError("You can only register a loan between 09:00 and 17:30.")
 
-    @api.constrains('state')
-    def _check_unique_loan(self):
-        for record in self:
-            if record.state in ['ongoing', 'late']:
-                """
-                self.search_count : Méthode qui compte le nombre d'enregistrements correspondant aux critères fournis.
-                """
-                if self.search_count([
-                    ('member_id', '=', record.member_id.id),
-                    ('book_id', '=', record.book_id.id),
-                    ('state', '=', 'ongoing'),
-                    ('state', 'in', ['ongoing', 'late']),
-                ]) > 1:
-                    raise exceptions.ValidationError("You cannot borrow the same book if it has not been returned.")
+    # @api.constrains('state')
+    # def _check_unique_loan(self):
+    #     for record in self:
+    #         if record.state in ['ongoing', 'late']:
+    #             """
+    #             self.search_count : Méthode qui compte le nombre d'enregistrements correspondant aux critères fournis.
+    #             """
+    #             if self.search_count([
+    #                 ('member_id', '=', record.member_id.id),
+    #                 ('book_id', '=', record.book_id.id),
+    #                 ('state', 'in', ['ongoing', 'late']),
+    #             ]) > 1:
+    #                 raise exceptions.ValidationError("You cannot borrow the same book if it has not been returned.")

@@ -1,34 +1,34 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <odoo>
     <data>
-        <record id="data_1" model="books">
-            <field name="title">Le Voyageur des Étoiles</field>
-            <field name="isbn">978-2-12345-678-9</field>
-            <field name="copy_number">2500</field>
-        </record>
+<!--        <record id="data_1" model="books">-->
+<!--            <field name="title">Le Voyageur des Étoiles</field>-->
+<!--            <field name="isbn">978-2-12345-678-9</field>-->
+<!--            <field name="copy_number">2500</field>-->
+<!--        </record>-->
 
-        <record id="data_2" model="books">
-            <field name="title">L'Ombre du Passé</field>
-            <field name="isbn">978-2-23456-789-0</field>
-            <field name="copy_number">1800</field>
-        </record>
+<!--        <record id="data_2" model="books">-->
+<!--            <field name="title">L'Ombre du Passé</field>-->
+<!--            <field name="isbn">978-2-23456-789-0</field>-->
+<!--            <field name="copy_number">1800</field>-->
+<!--        </record>-->
 
-        <record id="data_3" model="books">
-            <field name="title">Au Coeur des Abysses</field>
-            <field name="isbn">978-2-34567-890-1</field>
-            <field name="copy_number">3000</field>
-        </record>
+<!--        <record id="data_3" model="books">-->
+<!--            <field name="title">Au Coeur des Abysses</field>-->
+<!--            <field name="isbn">978-2-34567-890-1</field>-->
+<!--            <field name="copy_number">3000</field>-->
+<!--        </record>-->
 
-        <record id="data_4" model="books">
-            <field name="title">Les Secrets de la Nature</field>
-            <field name="isbn">978-2-45678-901-2</field>
-            <field name="copy_number">3000</field>
-        </record>
+<!--        <record id="data_4" model="books">-->
+<!--            <field name="title">Les Secrets de la Nature</field>-->
+<!--            <field name="isbn">978-2-45678-901-2</field>-->
+<!--            <field name="copy_number">3000</field>-->
+<!--        </record>-->
 
-        <record id="data_5" model="books">
-            <field name="title">Dans les Yeux de l'Inconnu</field>
-            <field name="isbn">978-2-56789-012-3</field>
-            <field name="copy_number">2000</field>
-        </record>
+<!--        <record id="data_5" model="books">-->
+<!--            <field name="title">Dans les Yeux de l'Inconnu</field>-->
+<!--            <field name="isbn">978-2-56789-012-3</field>-->
+<!--            <field name="copy_number">2000</field>-->
+<!--        </record>-->
     </data>
 </odoo>
