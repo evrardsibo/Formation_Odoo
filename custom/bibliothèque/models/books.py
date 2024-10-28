@@ -1,4 +1,4 @@
-from odoo import models, fields, api
+from odoo import models, fields
 
 
 class Books(models.Model):
@@ -24,14 +24,3 @@ class Books(models.Model):
             'view_mode': 'form',
             'target': 'new',
         }
-
-    @api.model
-    def create(self, vals):
-        if 'year_of_manufacture' in vals:
-            vals['year_of_manufacture'] = self.format_date(vals['year_of_manufacture'])
-        return super("books", self).create(vals)
-
-    def write(self, vals):
-        if 'year_of_manufacture' in vals:
-            vals['year_of_manufacture'] = self.format_date(vals['year_of_manufacture'])
-        return super("books", self).write(vals)

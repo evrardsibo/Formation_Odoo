@@ -30,7 +30,7 @@
                             <group>
                                 <field name="title"/>
                                 <field name="author"/>
-                                <field name="year_of_manufacture"/>
+                                <field name="year_of_manufacture" widget="date" options="{'format': 'dd/MM/yyyy'}"/>
                                 <field name="gender" widget="many2many_tags" options="{'color_field': 'color'}"/>
                             </group>
                             <group>

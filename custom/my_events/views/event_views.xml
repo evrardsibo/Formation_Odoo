@@ -1,0 +1,97 @@
+<odoo>
+    <data>
+        <record id="view_event_form" model="ir.ui.view">
+            <field name="name">event.management.form</field>
+            <field name="model">event.management</field>
+            <field name="arch" type="xml">
+                <form string="Event">
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="name"/>
+                                <field name="description"/>
+                                <field name="date_start"/>
+                                <field name="date_end"/>
+                            </group>
+                            <group>
+                                <field name="image" widget="image" class="oe_avatar"/>
+                                <field name="responsible_id"/>
+                                <field name="employee_ids" widget="many2many_tags"/>
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="view_event_tree" model="ir.ui.view">
+            <field name="name">event.management.tree</field>
+            <field name="model">event.management</field>
+            <field name="arch" type="xml">
+                <tree string="Events">
+                    <field name="sequence" widget="handle"/>
+                    <field name="name"/>
+                    <field name="date_start"/>
+                    <field name="date_end"/>
+                    <field name="employee_ids" widget="many2many_tags"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="view_event_calendar" model="ir.ui.view">
+            <field name="name">event.management.calendar</field>
+            <field name="model">event.management</field>
+            <field name="arch" type="xml">
+                <calendar string="Calendar" color="responsible_id" date_start="date_start" date_delay="duration" event_limit="5">
+                    <field name="name"/>
+                    <field name="responsible_id" invisible="1" filters="1" avatar_field="avatar_128"/>
+                    <field name="date_start"/>
+                    <field name="date_end"/>
+                </calendar>
+            </field>
+        </record>
+
+        <record id="event_view_kanban" model="ir.ui.view">
+            <field name="name">event.view.kanban</field>
+            <field name="model">event.management</field>
+            <field name="arch" type="xml">
+                <kanban class="o_event_kanban_view" sample="1">
+                    <field name="responsible_id"/>
+                    <field name="name"/>
+                    <field name="date_start"/>
+                    <field name="image"/>
+                    <field name="employee_ids"/>
+                    <templates>
+                        <t t-name="kanban-box">
+                            <div t-attf-class="oe_kanban_global_click">
+                                <div class="row">
+                                    <div class="col-12">
+                                        <strong>
+                                            <field name="responsible_id"/>
+                                        </strong>
+                                    </div>
+                                </div>
+                                <t t-if="record.name.value">
+                                    <hr class="mt8 mb8"/>
+                                    <field name="name"/>
+                                </t>
+                                <div>
+                                    <field name="image" widget="image" style="width: 75px; height: 75px;"/>
+                                </div>
+                                <t>
+                                    <field name="date_start"/>
+                                </t>
+                                <t>
+                                    <field name="employee_ids" widget="many2many_tags" options="{'color_field': 'color'}"/>
+                                </t>
+                            </div>
+                        </t>
+                    </templates>
+
+                </kanban>
+
+            </field>
+
+        </record>
+    </data>
+</odoo>

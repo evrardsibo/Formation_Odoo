@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <data>
+        <record id="data_1" model="event.management">
+            <field name="name">Festival de Namur</field>
+            <field name="description">Le terme apparaît dans le Nord de la France en 1829 et est lié au mouvement
+                orphéonique, fête musicale populaire à vocation charitable et politique qui progressivement s'annualise
+                et se laïcise. Mot emprunté à l'anglais qui est lui-même emprunté à l'ancien français festival « de fête
+                ; joyeux ; solennel », mot latin festivus.
+            </field>
+        </record>
+
+        <record id="data_2" model="event.management">
+            <field name="name">Festival de liege</field>
+            <field name="description">Le terme apparaît dans le Nord de la France en 1829 et est lié au mouvement
+                orphéonique, fête musicale populaire à vocation charitable et politique qui progressivement s'annualise
+                et se laïcise. Mot emprunté à l'anglais qui est lui-même emprunté à l'ancien français festival « de fête
+                ; joyeux ; solennel », mot latin festivus.
+            </field>
+        </record>
+
+        <record id="data_3" model="event.management">
+            <field name="name">Festival d'ath</field>
+            <field name="description">Le terme apparaît dans le Nord de la France en 1829 et est lié au mouvement
+                orphéonique, fête musicale populaire à vocation charitable et politique qui progressivement s'annualise
+                et se laïcise. Mot emprunté à l'anglais qui est lui-même emprunté à l'ancien français festival « de fête
+                ; joyeux ; solennel », mot latin festivus.
+            </field>
+        </record>
+
+        <record id="data_4" model="event.management">
+            <field name="name">Festival de jurbise</field>
+            <field name="description">Le terme apparaît dans le Nord de la France en 1829 et est lié au mouvement
+                orphéonique, fête musicale populaire à vocation charitable et politique qui progressivement s'annualise
+                et se laïcise. Mot emprunté à l'anglais qui est lui-même emprunté à l'ancien français festival « de fête
+                ; joyeux ; solennel », mot latin festivus.
+            </field>
+        </record>
+
+    </data>
+</odoo>
