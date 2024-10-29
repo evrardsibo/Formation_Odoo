@@ -18,11 +18,12 @@ Long description of module's purpose
     'version': '0.1',
 
     # any module necessary for this one to work correctly
-    'depends': ['base'],
+    'depends': ['base','mail'],
 
     # always loaded
     'data': [
         'security/ir.model.access.csv',
+        'security/kitchen_security.xml',
         # 'views/views.xml',
         # 'views/templates.xml',
         'views/kitchen_views.xml',
@@ -35,6 +36,8 @@ Long description of module's purpose
         'wizard/wizard_recipe_views.xml',
         'report/recipe_report.xml',
         'report/ir.actions.report.xml',
+        'data/cron.xml',
+        'data/ir_action_data.xml',
     ],
     # only loaded in demonstration mode
     'demo': [

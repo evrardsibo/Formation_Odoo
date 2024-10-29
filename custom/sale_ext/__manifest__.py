@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 {
-    'name': "my_events",
+    'name': "sale_ext",
 
     'summary': "Short (1 phrase/line) summary of the module's purpose",
 
@@ -18,24 +18,19 @@ Long description of module's purpose
     'version': '0.1',
 
     # any module necessary for this one to work correctly
-    'depends': ['base','hr','calendar'],
+    'depends': ['base','sale'],
 
     # always loaded
     'data': [
-        'security/ir.model.access.csv',
-        'security/event_security.xml',
+        #'security/ir.model.access.csv',
         'views/views.xml',
         'views/templates.xml',
-        'views/event_views.xml',
-        'views/event_menu_views.xml',
-        'data/event_data.xml',
-
+        'views/sale_order_views.xml',
+        'data/cron.xml',
     ],
     # only loaded in demonstration mode
     'demo': [
         'demo/demo.xml',
     ],
-    'installable': True,
-    'application': True,
 }
 

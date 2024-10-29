@@ -27,11 +27,11 @@ class KitchenRecipe(models.Model):
                         },
         }
 
-    # def _get_report_values(self, recids):
-    #     recipes = self.env['kitchen.recipe'].browse(recids)
-    #
-    #     return {
-    #         'doc_ids' : recids,
-    #         'doc_model':'kitchen.recipe',
-    #         'docs':recipes,
-    #     }
+    def _get_report_values(self, recids):
+        recipes = self.env['kitchen.recipe'].browse(recids)
+
+        return {
+            'doc_ids' : recids,
+            'doc_model':'kitchen.recipe',
+            'docs':recipes,
+        }

@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <data noupdate="1">
+        <record id="event_security" model="ir.module.category">
+            <field name="name">Event</field>
+            <field name="description">Events Groups</field>
+        </record>
+
+        <record id="event_user_group" model="res.groups">
+            <field name="name">User Event</field>
+            <field name="category_id" ref="event_security"/>
+            <field name="implied_ids" eval="[(4, ref('base.group_user'))]"/>
+        </record>
+
+        <record id="event_manager_group" model="res.groups">
+            <field name="name">Administrator Event</field>
+            <field name="category_id" ref="event_security"/>
+            <field name="implied_ids" eval="[(4, ref('event_user_group'))]"/>
+            <field name="users" eval="[(4, ref('base.user_root')), (4, ref('base.user_admin'))]"/>
+        </record>
+
+        <record id="ir_access_event" model="ir.model.access">
+            <field name="name">User access</field>
+            <field name="model_id" ref="model_event_management"/>
+            <field name="group_id" ref="event_user_group"/>
+            <field name="perm_read" eval="1"/>
+            <field name="perm_write" eval="0"/>
+            <field name="perm_create" eval="0"/>
+            <field name="perm_unlink" eval="0"/>
+        </record>
+
+        <record id="ir_access_event_manager" model="ir.model.access">
+            <field name="name">Manager access</field>
+            <field name="model_id" ref="model_event_management"/>
+            <field name="group_id" ref="event_manager_group"/>
+            <field name="perm_read" eval="1"/>
+            <field name="perm_write" eval="1"/>
+            <field name="perm_create" eval="1"/>
+            <field name="perm_unlink" eval="1"/>
+        </record>
+
+        <record id="user_rule" model="ir.rule">
+            <field name="name">User can only see their own records</field>
+            <field name="model_id" ref="model_event_management"/>
+            <field name="domain_force">[('employee_ids', '=', user.partner_id.id)]</field>
+            <field name="groups" eval="[(4, ref('base.group_user'))]"/>
+            <field name="perm_create" eval="0"/>
+            <field name="perm_write" eval="0"/>
+            <field name="perm_unlink" eval="0"/>
+            <field name="perm_read" eval="1"/>
+        </record>
+
+        <record id="user_rule_manager" model="ir.rule">
+            <field name="name">Manager can do all</field>
+            <field name="model_id" ref="model_event_management"/>
+            <field name="domain_force">[('responsible_id', '=', user.partner_id.id)]</field>
+            <field name="groups" eval="[(4, ref('base.group_user'))]"/>
+            <field name="perm_create" eval="1"/>
+            <field name="perm_write" eval="1"/>
+            <field name="perm_unlink" eval="1"/>
+            <field name="perm_read" eval="1"/>
+        </record>
+
+    </data>
+</odoo>

@@ -1,4 +1,4 @@
-from odoo import models, fields, api
+from odoo import models, fields, api, _
 from odoo.exceptions import ValidationError
 
 from datetime import date
@@ -46,6 +46,15 @@ class Kitchen(models.Model):
     def update_waiter(self):
         for record in self:
             record.waiter += 5
+
+    def _add_one_waiter(self):
+        for record in self.search([]):
+            record.waiter += 1
+
+    def _remove_one_waiter(self):
+        for record in self.search([]):
+            record.waiter -= 1
+
 
 
     def update_description(self):
@@ -105,3 +114,11 @@ class Kitchen(models.Model):
                         'default_message': self.message},
 
         }
+
+    # def action_set_to_test_completed(self):
+    #     """
+    #     Set the lab request's state to 'Completed'
+    #     ""record = super(.create(vals"
+    #     body =non  %s is Completed" % record.name
+    #     record.message_post(body=body)
+    #     return self.write({'state': 'completed'})

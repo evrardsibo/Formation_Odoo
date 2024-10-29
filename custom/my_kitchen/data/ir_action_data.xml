@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <data>
+        <record model="ir.actions.server" id="action_to_remove_one_waiter">
+            <field name="name">Remove waiter</field>
+            <field name="model_id" ref="my_kitchen.model_kitchen"/>
+            <field name="binding_model_id" ref="my_kitchen.model_kitchen"/>
+            <field name="binding_view_types">list</field>
+            <field name="state">code</field>
+            <field name="code">
+                action = records._remove_one_waiter()
+            </field>
+        </record>
+    </data>
+</odoo>

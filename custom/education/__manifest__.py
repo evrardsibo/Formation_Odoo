@@ -18,7 +18,7 @@ Long description of module's purpose
     'version': '0.1',
 
     # any module necessary for this one to work correctly
-    'depends': ['base','planning'],
+    'depends': ['base','planning','mail'],
 
     # always loaded
     'data': [
@@ -28,6 +28,7 @@ Long description of module's purpose
         'views/education_views.xml',
         'views/competence_tag_views.xml',
         'views/planning_views.xml',
+        'data/sequence.xml',
 
     ],
     # only loaded in demonstration mode

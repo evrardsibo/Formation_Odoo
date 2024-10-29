@@ -42,7 +42,8 @@
             <field name="name">event.management.calendar</field>
             <field name="model">event.management</field>
             <field name="arch" type="xml">
-                <calendar string="Calendar" color="responsible_id" date_start="date_start" date_delay="duration" event_limit="5">
+                <calendar string="Calendar" color="responsible_id" date_start="date_start" date_delay="duration"
+                          event_limit="5">
                     <field name="name"/>
                     <field name="responsible_id" invisible="1" filters="1" avatar_field="avatar_128"/>
                     <field name="date_start"/>
@@ -63,31 +64,37 @@
                     <field name="employee_ids"/>
                     <templates>
                         <t t-name="kanban-box">
-                            <div t-attf-class="oe_kanban_global_click">
-                                <div class="row">
-                                    <div class="col-12">
-                                        <strong>
-                                            <field name="responsible_id"/>
-                                        </strong>
+                            <div t-attf-class="d-flex flex-column p-0 oe_kanban_card oe_kanban_global_click">
+                                <div class="o_kanban_content p-0 m-0 position-relative row d-flex flex-fill">
+                                    <div class="col-4 text-bg-primary p-2 text-center d-flex flex-column justify-content-center">
+                                        <div t-attf-class="oe_kanban_global_click">
+                                            <div class="row">
+                                                <div >
+                                                    <strong>
+                                                        <field name="responsible_id"/>
+                                                    </strong>
+                                                </div>
+                                            </div>
+                                            <t t-if="record.name.value">
+                                                <hr class="mt8 mb8"/>
+                                                <field name="name"/>
+                                            </t>
+                                            <div>
+                                                <field name="image" widget="image" style="width: 75px; height: 75px;"/>
+                                            </div>
+                                            <t>
+                                                <field name="date_start"/>
+                                            </t>
+                                            <t>
+                                                <field name="employee_ids" widget="many2many_tags"
+                                                       options="{'color_field': 'color'}"/>
+                                            </t>
+                                        </div>
                                     </div>
                                 </div>
-                                <t t-if="record.name.value">
-                                    <hr class="mt8 mb8"/>
-                                    <field name="name"/>
-                                </t>
-                                <div>
-                                    <field name="image" widget="image" style="width: 75px; height: 75px;"/>
-                                </div>
-                                <t>
-                                    <field name="date_start"/>
-                                </t>
-                                <t>
-                                    <field name="employee_ids" widget="many2many_tags" options="{'color_field': 'color'}"/>
-                                </t>
                             </div>
                         </t>
                     </templates>
-
                 </kanban>
 
             </field>

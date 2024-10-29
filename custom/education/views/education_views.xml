@@ -11,7 +11,7 @@
                     <field name="type"/>  <!-- champ a afficher dans la vue-->
                     <field name="name"/>
                     <field name="competences" widget="many2many_tags" options="{'color_field': 'color'}"/>
-               </tree>
+                </tree>
             </field>
         </record>
 
@@ -24,10 +24,16 @@
                         <group>
                             <field name="contact"/>  <!-- champ a afficher dans la vue-->
                             <field name="type"/>  <!-- champ a afficher dans la vue-->
-                            <field name="name"/>
+                            <field name="name" readonly="1"/>
                             <field name="competences" widget="many2many_tags" options="{'color_field': 'color'}"/>
                         </group>
                     </sheet>
+                    <div class="oe_chatter">
+                        <field name="message_follower_ids" widget="mail_followers" groups="base.group_user"
+                               options="{'post_refresh': 'recipients'}"/>
+                        <field name="activity_ids"/>
+                        <field name="message_ids" widget="mail_thread"/>
+                    </div>
                 </form>
             </field>
         </record>

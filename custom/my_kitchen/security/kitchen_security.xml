@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <data>
+        <record id="kitchen_security" model="ir.module.category">
+            <field name="name">Kitchen</field>
+            <field name="description">Kitchen Groups</field>
+        </record>
+
+        <record id="kitchen_users_group" model="res.groups">
+            <field name="name">User Kitchen</field>
+            <field name="category_id" ref="kitchen_security"/>
+            <field name="implied_ids" eval="[(4, ref('base.group_user'))]"/>
+        </record>
+
+        <record id="kitchen_chef_group" model="res.groups">
+            <field name="name">Chef Kitchen</field>
+            <field name="category_id" ref="kitchen_security"/>
+            <field name="implied_ids" eval="[(4, ref('base.group_user'))]"/>
+        </record>
+
+        <record id="kitchen_manager_group" model="res.groups">
+            <field name="name">Administrator Kitchen</field>
+            <field name="category_id" ref="kitchen_security"/>
+            <field name="implied_ids" eval="[(4, ref('kitchen_users_group'))]"/>
+            <field name="users" eval="[(4, ref('base.user_root')), (4, ref('base.user_admin'))]"/>
+        </record>
+
+        <record id="ir_access_cook" model="ir.model.access">
+            <field name="name">Chef access</field>
+            <field name="model_id"
+                   ref="model_kitchen"/> <!-- Remplace your_model_name par le nom technique de ton modèle -->
+            <field name="group_id" ref="kitchen_chef_group"/> <!-- Assure-toi que le groupe est bien défini -->
+            <field name="perm_read" eval="True"/>
+            <field name="perm_write" eval="True"/>
+            <field name="perm_create" eval="True"/>
+            <field name="perm_unlink" eval="True"/>
+        </record>
+    </data>
+</odoo>
