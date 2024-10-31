@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <data>
+        <record id="training_tree_view" model="ir.ui.view">
+            <field name="name">training.tree</field>
+            <field name="model">training</field>
+            <field name="arch" type="xml">
+                <tree string="kitchen_recipe">
+                    <field name="name"/>
+                    <field name="tags" widget="many2many_tags" options="{'color_field': 'color'}"/>
+                    <field name="supervisor_id"/>
+                    <field name="date_start"/>
+                    <field name="date_end"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="training_form" model="ir.ui.view">
+            <field name="name">training.form</field>
+            <field name="model">training</field>
+            <field name="arch" type="xml">
+                <form string="Tag">
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="name"/>
+                                <field name="tags" widget="many2many_tags" options="{'color_field': 'color'}"/>
+                                <field name="supervisor_id"/>
+                                <field name="date_start" widget="daterange" options="{'end_date_field': 'date_end'}"/>
+                                <field name="date_end" invisible="1"/>
+                            </group>
+                            <group>
+                                <field name="duration"/>
+                                <field name="image" widget="image" style="width: 75px; height: 75px;"/>/>
+                            </group>
+                        </group>
+                        <notebook>
+                            <page string="Autres Information">
+                                <group>
+                                    <field name="line_ids">
+                                        <tree editable="bottom">
+                                            <field name="employee_id" widget="many2one"/>
+                                            <field name="is_present"/>
+                                        </tree>
+                                    </field>
+                                </group>
+                            </page>
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="training_recipe_win" model="ir.actions.act_window">
+            <field name="name">Training</field>
+            <field name="res_model">training</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <menuitem id="training_root" name="Training" web_icon="training,static/description/icon.png"
+                  groups="base.group_user" sequence="1" action="training_recipe_win"/>
+
+
+    </data>
+</odoo>
