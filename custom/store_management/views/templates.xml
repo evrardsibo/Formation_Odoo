@@ -22,3 +22,309 @@
 -->
     </data>
 </odoo>
+<!-- Menu Principal -->
+<!--<menuitem id="menu_school_root" name="École" sequence="1"/>-->
+
+<!--&lt;!&ndash; Menu Étudiants &ndash;&gt;-->
+<!--<menuitem id="menu_school_students" name="Étudiants" parent="menu_school_root" sequence="10" action="action_school_students"/>-->
+<!--<record id="action_school_students" model="ir.actions.act_window">-->
+<!--    <field name="name">Étudiants</field>-->
+<!--    <field name="res_model">res.partner</field>-->
+<!--    <field name="view_mode">kanban,tree,form</field>-->
+<!--    <field name="domain">[('contact_type', '=', 'student')]</field>-->
+<!--</record>-->
+
+<!--&lt;!&ndash; Menu Professeurs &ndash;&gt;-->
+<!--<menuitem id="menu_school_teachers" name="Professeurs" parent="menu_school_root" sequence="20" action="action_school_teachers"/>-->
+<!--<record id="action_school_teachers" model="ir.actions.act_window">-->
+<!--    <field name="name">Professeurs</field>-->
+<!--    <field name="res_model">res.partner</field>-->
+<!--    <field name="view_mode">kanban,tree,form</field>-->
+<!--    <field name="domain">[('contact_type', 'in', ['teacher', 'principal'])]</field>-->
+<!--</record>-->
+
+<!--&lt;!&ndash; Menu Cours &ndash;&gt;-->
+<!--<menuitem id="menu_school_courses" name="Cours" parent="menu_school_root" sequence="30" action="action_school_courses"/>-->
+<!--<record id="action_school_courses" model="ir.actions.act_window">-->
+<!--    <field name="name">Cours</field>-->
+<!--    <field name="res_model">school.course</field>-->
+<!--    <field name="view_mode">kanban,tree,form</field>-->
+<!--</record>-->
+
+<!--&lt;!&ndash; Menu Configuration &ndash;&gt;-->
+<!--<menuitem id="menu_school_configuration" name="Configuration" parent="menu_school_root" sequence="40" groups="base.group_system"/>-->
+
+<!--&lt;!&ndash; Degrés &ndash;&gt;-->
+<!--<menuitem id="menu_school_degrees" name="Degrés" parent="menu_school_configuration" sequence="10" action="action_school_degrees"/>-->
+<!--<record id="action_school_degrees" model="ir.actions.act_window">-->
+<!--    <field name="name">Degrés</field>-->
+<!--    <field name="res_model">school.degree</field>-->
+<!--    <field name="view_mode">tree,form</field>-->
+<!--</record>-->
+
+<!--&lt;!&ndash; Types de Cours &ndash;&gt;-->
+<!--<menuitem id="menu_school_course_types" name="Types de Cours" parent="menu_school_configuration" sequence="20" action="action_school_course_types"/>-->
+<!--<record id="action_school_course_types" model="ir.actions.act_window">-->
+<!--    <field name="name">Types de Cours</field>-->
+<!--    <field name="res_model">school.course.type</field>-->
+<!--    <field name="view_mode">tree,form</field>-->
+<!--</record>-->
+
+<!--&lt;!&ndash; Menu Classes &ndash;&gt;-->
+<!--<menuitem id="menu_school_classes" name="Classes" parent="menu_school_root" sequence="50" action="action_school_classes"/>-->
+<!--<record id="action_school_classes" model="ir.actions.act_window">-->
+<!--    <field name="name">Classes</field>-->
+<!--    <field name="res_model">school.class</field>-->
+<!--    <field name="view_mode">kanban,tree,form</field>-->
+<!--</record>-->
+
+<!--&lt;!&ndash; Menu Programmes &ndash;&gt;-->
+<!--<menuitem id="menu_school_programs" name="Programmes" parent="menu_school_root" sequence="60" action="action_school_programs"/>-->
+<!--<record id="action_school_programs" model="ir.actions.act_window">-->
+<!--    <field name="name">Programmes</field>-->
+<!--    <field name="res_model">school.program</field>-->
+<!--    <field name="view_mode">tree,form</field>-->
+<!--</record>-->
+
+
+<!--<odoo>-->
+<!--    <record id="view_student_tree" model="ir.ui.view">-->
+<!--        <field name="name">view.student.tree</field>-->
+<!--        <field name="model">res.partner</field>-->
+<!--        <field name="arch" type="xml">-->
+<!--            <tree string="Étudiants">-->
+<!--                <field name="name"/>-->
+<!--                <field name="class_id"/>-->
+<!--                <field name="option"/>-->
+<!--            </tree>-->
+<!--        </field>-->
+<!--    </record>-->
+
+<!--    <record id="view_student_form" model="ir.ui.view">-->
+<!--        <field name="name">view.student.form</field>-->
+<!--        <field name="model">res.partner</field>-->
+<!--        <field name="arch" type="xml">-->
+<!--            <form string="Étudiant">-->
+<!--                <sheet>-->
+<!--                    <group>-->
+<!--                        <field name="name"/>-->
+<!--                        <field name="class_id"/>-->
+<!--                        <field name="option"/>-->
+<!--                        <field name="courses"/>-->
+<!--                    </group>-->
+<!--                </sheet>-->
+<!--                <notebook>-->
+<!--                    <page string="Cours Suivis">-->
+<!--                        <field name="courses"/>-->
+<!--                    </page>-->
+<!--                </notebook>-->
+<!--            </form>-->
+<!--        </field>-->
+<!--    </record>-->
+
+<!--    <record id="view_student_kanban" model="ir.ui.view">-->
+<!--        <field name="name">view.student.kanban</field>-->
+<!--        <field name="model">res.partner</field>-->
+<!--        <field name="arch" type="xml">-->
+<!--            <kanban string="Étudiants">-->
+<!--                <field name="name"/>-->
+<!--                <field name="class_id"/>-->
+<!--                <templates>-->
+<!--                    <t t-name="kanban-box">-->
+<!--                        <div class="oe_kanban_global_click">-->
+<!--                            <strong><field name="name"/></strong>-->
+<!--                            <div><field name="class_id"/></div>-->
+<!--                        </div>-->
+<!--                    </t>-->
+<!--                </templates>-->
+<!--            </kanban>-->
+<!--        </field>-->
+<!--    </record>-->
+<!--</odoo>-->
+
+
+<!--<odoo>-->
+<!--    <record id="view_teacher_tree" model="ir.ui.view">-->
+<!--        <field name="name">view.teacher.tree</field>-->
+<!--        <field name="model">res.partner</field>-->
+<!--        <field name="arch" type="xml">-->
+<!--            <tree string="Professeurs">-->
+<!--                <field name="name"/>-->
+<!--                <field name="teaching_courses"/>-->
+<!--            </tree>-->
+<!--        </field>-->
+<!--    </record>-->
+
+<!--    <record id="view_teacher_form" model="ir.ui.view">-->
+<!--        <field name="name">view.teacher.form</field>-->
+<!--        <field name="model">res.partner</field>-->
+<!--        <field name="arch" type="xml">-->
+<!--            <form string="Professeur">-->
+<!--                <sheet>-->
+<!--                    <group>-->
+<!--                        <field name="name"/>-->
+<!--                        <field name="teaching_courses"/>-->
+<!--                    </group>-->
+<!--                </sheet>-->
+<!--                <notebook>-->
+<!--                    <page string="Cours Donnés">-->
+<!--                        <field name="teaching_courses"/>-->
+<!--                    </page>-->
+<!--                </notebook>-->
+<!--            </form>-->
+<!--        </field>-->
+<!--    </record>-->
+
+<!--    <record id="view_teacher_kanban" model="ir.ui.view">-->
+<!--        <field name="name">view.teacher.kanban</field>-->
+<!--        <field name="model">res.partner</field>-->
+<!--        <field name="arch" type="xml">-->
+<!--            <kanban string="Professeurs">-->
+<!--                <field name="name"/>-->
+<!--                <templates>-->
+<!--                    <t t-name="kanban-box">-->
+<!--                        <div class="oe_kanban_global_click">-->
+<!--                            <strong><field name="name"/></strong>-->
+<!--                        </div>-->
+<!--                    </t>-->
+<!--                </templates>-->
+<!--            </kanban>-->
+<!--        </field>-->
+<!--    </record>-->
+<!--</odoo>-->
+
+<!--<odoo>-->
+<!--    <record id="view_principal_tree" model="ir.ui.view">-->
+<!--        <field name="name">view.principal.tree</field>-->
+<!--        <field name="model">res.partner</field>-->
+<!--        <field name="arch" type="xml">-->
+<!--            <tree string="Titulaires">-->
+<!--                <field name="name"/>-->
+<!--                <field name="class_id"/>-->
+<!--                <field name="teaching_courses"/>-->
+<!--            </tree>-->
+<!--        </field>-->
+<!--    </record>-->
+
+<!--    <record id="view_principal_form" model="ir.ui.view">-->
+<!--        <field name="name">view.principal.form</field>-->
+<!--        <field name="model">res.partner</field>-->
+<!--        <field name="arch" type="xml">-->
+<!--            <form string="Titulaire">-->
+<!--                <sheet>-->
+<!--                    <group>-->
+<!--                        <field name="name"/>-->
+<!--                        <field name="class_id"/>-->
+<!--                        <field name="teaching_courses"/>-->
+<!--                    </group>-->
+<!--                </sheet>-->
+<!--                <notebook>-->
+<!--                    <page string="Cours Donnés">-->
+<!--                        <field name="teaching_courses"/>-->
+<!--                    </page>-->
+<!--                    <page string="Classe">-->
+<!--                        <field name="class_id"/>-->
+<!--                    </page>-->
+<!--                </notebook>-->
+<!--            </form>-->
+<!--        </field>-->
+<!--    </record>-->
+
+<!--    <record id="view_principal_kanban" model="ir.ui.view">-->
+<!--        <field name="name">view.principal.kanban</field>-->
+<!--        <field name="model">res.partner</field>-->
+<!--        <field name="arch" type="xml">-->
+<!--            <kanban string="Titulaires">-->
+<!--                <field name="name"/>-->
+<!--                <templates>-->
+<!--                    <t t-name="kanban-box">-->
+<!--                        <div class="oe_kanban_global_click">-->
+<!--                            <strong><field name="name"/></strong>-->
+<!--                            <div><field name="class_id"/></div>-->
+<!--                        </div>-->
+<!--                    </t>-->
+<!--                </templates>-->
+<!--            </kanban>-->
+<!--        </field>-->
+<!--    </record>-->
+<!--</odoo>-->
+
+
+<!--<odoo>-->
+<!--    <data>-->
+<!--        &lt;!&ndash; Menu principal &ndash;&gt;-->
+<!--        <menuitem id="school_menu" name="École" sequence="1"/>-->
+<!--        -->
+<!--        &lt;!&ndash; Menu Étudiants &ndash;&gt;-->
+<!--        <menuitem id="menu_students" name="Étudiants" parent="school_menu" sequence="1"/>-->
+<!--        <record id="view_students_tree" model="ir.ui.view">-->
+<!--            <field name="name">students.tree</field>-->
+<!--            <field name="model">res.partner</field>-->
+<!--            <field name="arch" type="xml">-->
+<!--                <tree>-->
+<!--                    <field name="name"/>-->
+<!--                    <field name="class_id"/>-->
+<!--                    <field name="option_ids"/>-->
+<!--                </tree>-->
+<!--            </field>-->
+<!--        </record>-->
+<!--        <record id="view_students_form" model="ir.ui.view">-->
+<!--            <field name="name">students.form</field>-->
+<!--            <field name="model">res.partner</field>-->
+<!--            <field name="arch" type="xml">-->
+<!--                <form>-->
+<!--                    <sheet>-->
+<!--                        <group>-->
+<!--                            <field name="name"/>-->
+<!--                            <field name="contact_type"/>-->
+<!--                            <field name="class_id"/>-->
+<!--                            <field name="option_ids"/>-->
+<!--                            <field name="course_ids" widget="many2many_tags"/>-->
+<!--                        </group>-->
+<!--                    </sheet>-->
+<!--                </form>-->
+<!--            </field>-->
+<!--        </record>-->
+<!--        -->
+<!--        &lt;!&ndash; Menu Professeurs &ndash;&gt;-->
+<!--        <menuitem id="menu_teachers" name="Professeurs" parent="school_menu" sequence="2"/>-->
+<!--        <record id="view_teachers_tree" model="ir.ui.view">-->
+<!--            <field name="name">teachers.tree</field>-->
+<!--            <field name="model">res.partner</field>-->
+<!--            <field name="arch" type="xml">-->
+<!--                <tree>-->
+<!--                    <field name="name"/>-->
+<!--                    <field name="course_ids"/>-->
+<!--                </tree>-->
+<!--            </field>-->
+<!--        </record>-->
+<!--        -->
+<!--        &lt;!&ndash; Menu Titulaires &ndash;&gt;-->
+<!--        <menuitem id="menu_tutors" name="Titulaires" parent="school_menu" sequence="3"/>-->
+<!--        -->
+<!--        &lt;!&ndash; Menu Cours &ndash;&gt;-->
+<!--        <menuitem id="menu_courses" name="Cours" parent="school_menu" sequence="4"/>-->
+<!--        -->
+<!--        &lt;!&ndash; Menu Configuration &ndash;&gt;-->
+<!--        <menuitem id="menu_configuration" name="Configuration" parent="school_menu" sequence="5"/>-->
+<!--        -->
+<!--        &lt;!&ndash; Menu Classe &ndash;&gt;-->
+<!--        <menuitem id="menu_classes" name="Classes" parent="school_menu" sequence="6"/>-->
+<!--        <record id="view_classes_tree" model="ir.ui.view">-->
+<!--            <field name="name">classes.tree</field>-->
+<!--            <field name="model">school.class</field>-->
+<!--            <field name="arch" type="xml">-->
+<!--                <tree>-->
+<!--                    <field name="name"/>-->
+<!--                    <field name="tutor_id"/>-->
+<!--                    <field name="degree"/>-->
+<!--                    <field name="student_ids"/>-->
+<!--                </tree>-->
+<!--            </field>-->
+<!--        </record>-->
+<!--    </data>-->
+<!--</odoo>-->
+
+
+
+
